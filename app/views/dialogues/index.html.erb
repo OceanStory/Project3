@@ -1,2 +1,15 @@
-<h1>Dialogues#index</h1>
-<p>Find me in app/views/dialogues/index.html.erb</p>
+
+
+<h1> All Dialogue is here</h1>
+<p><%= link_to("New Dialogue", new_dialogue_path) %></p>
+<ul>
+  <% @dialogues.each do |dialogue| %>
+    <li>
+      <h3>
+<%= dialogue.content %>
+      </h3>
+    </li>
+      <p><%= link_to("Edit", edit_dialogue_path(dialogue.id)) %></p>
+  <p><%= link_to("Delete", "/dialogues/#{dialogue.id}", method: "delete") %></p>
+  <% end %>
+</ul>
