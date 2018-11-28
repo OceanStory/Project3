@@ -1,0 +1,10 @@
+<%= form_for @dialogue do |d| %>
+
+  <div>
+    <%= d.label :content, "Edit the content of this dialouge" %>
+    <%= d.text_field :content %>
+  </div>
+
+  <%= d.submit %>
+<% end %>
+
