@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   # get "dialogues/index"
   # get "dialogues/show"
   # get "dialogues/new"
@@ -13,7 +14,9 @@ Rails.application.routes.draw do
   # get 'posts/edit'
   resources :dialogues
 
+=======
+  resources :posts, :dialogues, :items
+>>>>>>> 7759916e6715ff4554566dfcc6bb132285325658
   devise_for :admins
   root "pages#home"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
