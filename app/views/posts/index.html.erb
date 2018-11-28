@@ -1,12 +1,13 @@
-<h1> All Posts</h1>
-
+<h1> All Posts is here</h1>
+<p><%= link_to("New Post", new_post_path) %></p>
 <ul>
   <% @posts.each do |post| %>
     <li>
       <h3>
 <%= post.title %>
-
       </h3>
     </li>
+      <p><%= link_to("Edit", edit_post_path(post.id)) %></p>
+  <p><%= link_to("Delete", "/posts/#{post.id}", method: "delete") %></p>
   <% end %>
 </ul>
