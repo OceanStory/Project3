@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
   #  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @posts = Post.all 
+    @posts = Post.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def show
     @post = Post.find_by(id: params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+    end
   end
 
   def new
@@ -13,13 +21,12 @@ class PostsController < ApplicationController
   end
 
   def create
-   post = Post.create(post_params)
+    post = Post.create(post_params)
     redirect_to posts_path
   end
 
   def edit
     @post = Post.find(params[:id])
-    
   end
 
   def update
@@ -28,15 +35,15 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
- def destroy
+  def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end
-  
-   private
+
+  private
 
   def post_params
-    params.require(:post).permit(:title,:content)
+    params.require(:post).permit(:title, :content)
   end
 end

@@ -1,6 +1,10 @@
 class DialoguesController < ApplicationController
   def index
     @dialogues = Dialogue.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @dialogues }
+    end
   end
 
   def show
