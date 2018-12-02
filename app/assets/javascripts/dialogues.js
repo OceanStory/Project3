@@ -6,10 +6,10 @@ function responseToJSON(response) {
 function displayDialogues(data) {
   console.log(data);
   dialogesList = data
-    .map(function(dialogue) {
+    .map(function (dialogue) {
       return `<div class="dialogue" id="dialogue-${
         dialogue.id
-      }"><p>${dialogue.content}</p><a href="/posts/1">Read more</a></div>`;
+        }"><p>${dialogue.content}</p><a href="/posts/1">Read more</a></div>`;
     })
     .join("");
   const DialogueDiv = document.querySelector("#dialogues");
