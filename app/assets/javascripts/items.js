@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 function responseToJSON(response) {
-  return response.json();
+	return response.json();
 }
 function dispalyItems(data) {
   console.log(data);
@@ -55,10 +55,10 @@ setInterval(function () {
   $("img.icon").toggleClass("down");
 }, 1500);
 function getItems() {
-  fetch("/items", {
-    headers: { "Content-Type": "application/json", Accept: "application/json" }
-  })
-    .then(responseToJSON)
-    .then(dispalyItems);
+	fetch('/items', {
+		headers: { 'Content-Type': 'application/json', Accept: 'application/json' }
+	})
+		.then(responseToJSON)
+		.then(dispalyItems);
 }
 getItems();

@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 function responseToJSON(response) {
-  return response.json();
+	return response.json();
 }
 function displayDialogues(data) {
   console.log(data);
@@ -17,13 +17,13 @@ function displayDialogues(data) {
   DialogueDiv.innerHTML = `${dialogesList}`;
 }
 function dispalyItems(data) {
-  console.log(data);
+	console.log(data);
 }
 function getDialogues() {
-  fetch("/dialogues", {
-    headers: { "Content-Type": "application/json", Accept: "application/json" }
-  })
-    .then(responseToJSON)
-    .then(displayDialogues);
+	fetch('/dialogues', {
+		headers: { 'Content-Type': 'application/json', Accept: 'application/json' }
+	})
+		.then(responseToJSON)
+		.then(displayDialogues);
 }
-getDialogues();
+// getDialogues();
