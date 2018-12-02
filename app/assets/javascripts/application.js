@@ -91,9 +91,15 @@ $.fn.animateTo = function(cssProps, time = 100, easing = 'linear') {
 	return p;
 };
 
-$('#Item').animateTo({ right: '150px', top: '200px', left: '300px' }, 8000).then(function(el) {
-	el.css('transform', 'rotate(20deg)');
-});
+window.onload = () => {
+	animateJunk();
+};
+
+const animateJunk = () => {
+	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
+		el.css('transform', 'rotate(20deg)');
+	});
+};
 
 setTimeout(function() {
 	$('#d-1').show();
