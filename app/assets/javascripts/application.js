@@ -92,19 +92,119 @@ $.fn.animateTo = function(cssProps, time = 100, easing = 'linear') {
 };
 
 window.onload = () => {
-	animateJunk();
+	// animateJunk();
+	scene1();
 };
 
-const animateJunk = () => {
+// const animateJunk = () => {
+$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
+	el.css('transform', 'rotate(20deg)');
+});
+// };
+
+// setTimeout(function() {
+// 	$('#d-1').show();
+// }, 2000);
+// setTimeout(function() {
+// 	$('#d-1').hide();
+// 	$('#d-2').show();
+// }, 3000);
+// setTimeout(function() {
+// 	$('#d-2').hide();
+// 	$('#d-3').show();
+// }, 4000);
+// setTimeout(function() {
+// 	$('#d-3').hide();
+// 	$('#d-4').show();
+// }, 5000);
+
+// $('#turt').hide();
+// setTimeout(function() {
+// 	$('#turt').show();
+// }, 9000);
+// setTimeout(function() {
+// 	$('#d-1').hide();
+// 	$('#d-2').show();
+// }, 3000);
+// setTimeout(function() {
+// 	$('#d-2').hide();
+// 	$('#d-3').show();
+// }, 4000);
+// setTimeout(function() {
+// 	$('#d-3').hide();
+// 	$('#d-4').show();
+// }, 5000);
+var tl;
+
+// tl.pause();
+// const lastTime = parseFloat(localStorage.getItem('tl') || 0);
+// localStorage.setItem('tl', lastTime);
+// setInterval(() => {
+// 	localStorage.setItem('tl', lastTime + performance.now());
+// }, 1000);
+// tl.play(lastTime / 1000);
+// console.log(`The animation started ${lastTime / 1000} seconds in`);
+
+// scene1
+
+// Show a button
+// If the user clicks the Continue button, play Scene 2
+// IF the user clicks the other button, go to wherever that button says to go
+
+function scene1() {
+	localStorage.setItem('currentScene', 1);
 	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
 		el.css('transform', 'rotate(20deg)');
 	});
-};
+	tl = new TimelineLite();
+	// Sequence multiple tweens
+	//Show item
+	//show dialouge
+	//last dialouge with button link to post page
+	//continue button
+	// setTimeout(function s1() {
+	tl
+		.to($('#d-1'), 1, { autoAlpha: 1, delay: 5 })
+		.to($('#d-1'), 1, { autoAlpha: 0 })
+		.to($('#d-2'), 1, { autoAlpha: 1 })
+		.to($('#d-2'), 1, { autoAlpha: 0 })
+		.to($('#d-3'), 1, { autoAlpha: 1 })
+		.to($('#d-3'), 1, { autoAlpha: 0 })
+		.to($('#d-4'), 1, { autoAlpha: 1 });
 
-setTimeout(function() {
-	$('#d-1').show();
-}, 2000);
-setTimeout(function() {
-	$('#d-1').hide();
-	$('#d-2').show();
-}, 3000);
+	// }, 3000);
+	// console.log('Scene 1 starting');
+	window.addEventListener('click', scene2);
+}
+
+function scene2() {
+	window.removeEventListener('click', scene2);
+	localStorage.setItem('currentScene', 2);
+	console.log('Scene 2 starting');
+	window.addEventListener('click', scene3);
+}
+
+function scene3() {
+	window.removeEventListener('click', scene3);
+	localStorage.setItem('currentScene', 3);
+	console.log('Scene 3 starting');
+	window.addEventListener('click', scene4);
+}
+
+function scene4() {
+	window.removeEventListener('click', scene4);
+	localStorage.setItem('currentScene', 4);
+	console.log('Scene 4 starting');
+}
+
+const currentScene = localStorage.getItem('currentScene');
+
+if (currentScene === '2') {
+	scene2();
+} else if (currentScene === '3') {
+	scene3();
+} else if (currentScene === '4') {
+	scene4();
+} else {
+	scene1();
+}
