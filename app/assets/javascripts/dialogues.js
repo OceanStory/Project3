@@ -26,4 +26,4 @@ function getDialogues() {
     .then(responseToJSON)
     .then(displayDialogues);
 }
-getDialogues();
+// getDialogues();

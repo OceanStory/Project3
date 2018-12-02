@@ -56,8 +56,7 @@ div.dialogue {
 	position: absolute;
 	z-index: 2;
 }
-.up {
-}
+
 .down {
 	animation: down 1s linear infinite;
 }
