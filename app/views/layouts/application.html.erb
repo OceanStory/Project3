@@ -4,39 +4,75 @@
     <title>GroupProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   </head>
-
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-   <div id="gradient" />
-    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div id="gradient" />
     <div class="ocean">
-  <div class="wave"></div>
-  <div class="wave"></div>
-</div>
-    
-    
-
-<div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <div class="area" >
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div >
-    
+    <div class="cont"><img src="http://assets.stickpng.com/thumbs/58ac47d6f86c9c2eea74c4f0.png" alt="" class="whale">
+      <img src="http://www.pngall.com/wp-content/uploads/2016/04/Water-Bottle-Free-Download-PNG.png" id="bottle"  />
+      <img src="https://vignette.wikia.nocookie.net/animaljam/images/e/ec/Trenovated_art_turtle.png/revision/latest?cb=20170622173403" alt="" id="turt" style="display: none">
+      <div class="dialogue-container">
+        <div class="whale-dialogue" id="d-1">
+          <p>whale's dialogue</p>
+        </div>
+        <div  class="boy-dialogue"id="d-2">
+          <p>Boy's dialogue</p>
+        </div>
+        <div class="whale-dialogue" id="d-3">
+          <p>whale's dialogue</p>
+        </div>
+        <div  class="boy-dialogue"id="d-4">
+          <p>Boy's dialogue</p>
+          <button id="btn">Continue</button>
+          <a href="/posts/5">Read more</a>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
+<!--  <div class="whale-dialogue">
+        <div id="d-1">
+          <p>whale's dialogue</p>
+        </div>
+        <div id="d-3">
+          <p>whale's dialogue</p>
+        </div>
+      </div>
+      <div class="boy-dialogue">
+        <div  id="d-2">
+          <p>Boy's dialogue</p>
+        </div>
+        <div id="d-4">
+          <p>Boy's dialogue</p>
+        </div>
+      </div>
+    </div>
+    -->

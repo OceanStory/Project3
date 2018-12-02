@@ -22,7 +22,7 @@ function dispalyItems(data) {
         var i = Math.floor(Math.random() * the_images.length);
         return the_images[i];
       };
-      var total_number_of_images = 60;
+      var total_number_of_images = 40;
       var max_height = canvas.offsetHeight - icon_height;
       var max_width = canvas.offsetWidth - icon_width;
       var randomCoordinate = function() {
@@ -53,7 +53,7 @@ function dispalyItems(data) {
 }
 setInterval(function() {
   $("img.icon").toggleClass("down");
-}, 1000);
+}, 1500);
 function getItems() {
   fetch("/items", {
     headers: { "Content-Type": "application/json", Accept: "application/json" }
