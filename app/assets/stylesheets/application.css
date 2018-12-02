@@ -248,9 +248,13 @@ div.dialogue {
 		border-radius: 0%;
 	}
 }
-/* Whale movement */
+/* N: Whale movement */
+
 .whale {
-	animation: whale-movement 2s infinite;
+	animation: whale-movement 8s infinite;
+	position: relative;
+	left: -100 px;
+	/* top: -270px;   */
 }
 @keyframes whale-movement {
 	0% {
@@ -268,4 +272,20 @@ div.dialogue {
 	100% {
 		transform: translateY(0);
 	}
+}
+
+#Item {
+	width: 70px;
+	position: relative;
+	top: -400px;
+	transform: rotate(10deg);
+}
+
+.cont {
+	position: relative;
+	left: 300px;
+}
+
+#d-2 {
+	top: -200px;
 }
