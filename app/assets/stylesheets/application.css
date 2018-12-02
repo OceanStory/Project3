@@ -58,22 +58,22 @@ div.dialogue {
 }
 
 .down {
-  animation: down 6s linear infinite;
+  animation: down 1s linear infinite;
 }
 @-moz-keyframes down {
   100% {
-    -moz-transform: rotate(20deg);
+    -moz-transform: rotate(30deg);
   }
 }
 @-webkit-keyframes down {
   100% {
-    -webkit-transform: rotate(20deg);
+    -webkit-transform: rotate(30deg);
   }
 }
 @keyframes down {
   100% {
-    -webkit-transform: rotate(20deg);
-    transform: rotate(20deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(10deg);
   }
 }
 @-moz-keyframes up {
@@ -247,5 +247,26 @@ div.dialogue {
     transform: translateY(-1000px) rotate(720deg);
     opacity: 0;
     border-radius: 0%;
+  }
+}
+/* Whale movement */
+.whale {
+  animation: whale-movement 2s infinite;
+}
+@keyframes whale-movement {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
