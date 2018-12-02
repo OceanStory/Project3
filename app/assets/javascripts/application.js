@@ -164,11 +164,11 @@ function scene1() {
 	//continue button
 	// setTimeout(function s1() {
 	tl
-		.to($('#d-1'), 1, { autoAlpha: 1, delay: 5 })
+		.to($('#d-1'), 6, { autoAlpha: 1, delay: 5 })
 		.to($('#d-1'), 1, { autoAlpha: 0 })
-		.to($('#d-2'), 1, { autoAlpha: 1 })
+		.to($('#d-2'), 6, { autoAlpha: 1 })
 		.to($('#d-2'), 1, { autoAlpha: 0 })
-		.to($('#d-3'), 1, { autoAlpha: 1 })
+		.to($('#d-3'), 6, { autoAlpha: 1 })
 		.to($('#d-3'), 1, { autoAlpha: 0 })
 		.to($('#d-4'), 1, { autoAlpha: 1 });
 
