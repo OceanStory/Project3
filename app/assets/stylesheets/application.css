@@ -56,27 +56,24 @@ div.dialogue {
   position: absolute;
   z-index: 2;
 }
-.up {
-}
+
 .down {
-  /* animation: down 6s linear infinite; */
-  /* top: 90px; */
-  bottom: 90%;
+  animation: down 6s linear infinite;
 }
 @-moz-keyframes down {
   100% {
-    -moz-transform: rotate(10deg);
+    -moz-transform: rotate(20deg);
   }
 }
 @-webkit-keyframes down {
   100% {
-    -webkit-transform: rotate(10deg);
+    -webkit-transform: rotate(20deg);
   }
 }
 @keyframes down {
   100% {
-    -webkit-transform: rotate(10deg);
-    transform: rotate(10deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
   }
 }
 @-moz-keyframes up {
