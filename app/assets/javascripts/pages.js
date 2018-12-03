@@ -271,8 +271,9 @@ $(document).ready(function() {
     $(".round-circle").on("click", function() {
       $(".round-circle").toggle("explode");
       console.log("clicked");
-      $(".round-circle").effect("explode", 5000);
-      $(document).click(function() {});
+      //   $(".round-circle").effect("explode", 5000);
+      location.href = "/pages/home";
+      //   $(document).click(function() {});
     });
   };
 });
