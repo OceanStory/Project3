@@ -153,8 +153,8 @@ var tl;
 
 function scene1() {
 	localStorage.setItem('currentScene', 1);
-	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
-		el.css('transform', 'rotate(20deg)');
+	$('#bottle').animateTo({ right: '150px', top: '500px', left: '300px' }, 8000).then(function(el) {
+		el.css('opacity', '0');
 	});
 	tl = new TimelineLite();
 	// Sequence multiple tweens
@@ -164,17 +164,21 @@ function scene1() {
 	//continue button
 	// setTimeout(function s1() {
 	tl
-		.to($('#d-1'), 6, { autoAlpha: 1, delay: 5 })
+		.to($('#d-1'), 1, { autoAlpha: 1, delay: 5 })
 		.to($('#d-1'), 1, { autoAlpha: 0 })
-		.to($('#d-2'), 6, { autoAlpha: 1 })
+		.to($('#d-2'), 1, { autoAlpha: 1 })
 		.to($('#d-2'), 1, { autoAlpha: 0 })
-		.to($('#d-3'), 6, { autoAlpha: 1 })
+		.to($('#d-3'), 1, { autoAlpha: 1 })
 		.to($('#d-3'), 1, { autoAlpha: 0 })
 		.to($('#d-4'), 1, { autoAlpha: 1 });
 
 	// }, 3000);
 	// console.log('Scene 1 starting');
-	window.addEventListener('click', scene2);
+
+	$('#btn').click(function() {
+		tl.to($('#d-4'), 1, { autoAlpha: 0 });
+		scene2();
+	});
 }
 
 function scene2() {
