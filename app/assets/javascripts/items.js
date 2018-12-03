@@ -1,3 +1,13 @@
+var app = app || {};
+
+app.testFunction = () => {
+  console.log("test!");
+};
+
+app.dispalyItems = () => {
+  getItems();
+};
+
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 function responseToJSON(response) {
@@ -48,12 +58,13 @@ function dispalyItems(data) {
         createImage();
       }
     };
-    window.addEventListener("load", init);
+    // window.addEventListener("load", init);
+    init();
   })(window, document);
 }
 setInterval(function() {
   $("img.icon").toggleClass("down");
-}, 1500);
+}, 1000);
 function getItems() {
   fetch("/items", {
     headers: { "Content-Type": "application/json", Accept: "application/json" }
@@ -61,4 +72,3 @@ function getItems() {
     .then(responseToJSON)
     .then(dispalyItems);
 }
-getItems();
