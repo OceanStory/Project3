@@ -1,3 +1,13 @@
+var app = app || {};
+
+app.testFunction = () => {
+  console.log("test!");
+};
+
+app.dispalyItems = () => {
+  getItems();
+};
+
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 function responseToJSON(response) {
@@ -8,8 +18,11 @@ function dispalyItems(data) {
   itemsList = data.map(function(item) {
     return item.image;
   });
+  setTimeout(function() {}, 3000);
   (function(window, document) {
-    "use strict";
+    // debugger;
+
+    ("use strict");
     var init = function() {
       var canvas = document.querySelector(".items");
       var icon_template = document.querySelector("#template");
@@ -23,6 +36,7 @@ function dispalyItems(data) {
         return the_images[i];
       };
       var total_number_of_images = 60;
+      console.log(canvas.offsetHeight, canvas.offsetWidth);
       var max_height = canvas.offsetHeight - icon_height;
       var max_width = canvas.offsetWidth - icon_width;
       var randomCoordinate = function() {
@@ -44,11 +58,13 @@ function dispalyItems(data) {
         node.setAttribute("width", "50px");
         canvas.appendChild(node);
       };
+
       for (var i = 0; i < total_number_of_images; i++) {
         createImage();
       }
     };
-    window.addEventListener("load", init);
+    // window.addEventListener("load", init);
+    init();
   })(window, document);
 }
 setInterval(function() {
@@ -61,4 +77,3 @@ function getItems() {
     .then(responseToJSON)
     .then(dispalyItems);
 }
-getItems();

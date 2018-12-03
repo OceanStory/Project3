@@ -14,6 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+var app = app || {};
 var colors = new Array(
   [0, 100, 100],
   [0, 40, 100],
@@ -22,7 +24,6 @@ var colors = new Array(
   [0, 20, 100],
   [0, 12, 0]
 );
-
 var step = 0;
 //color table indices for:
 // current color left
@@ -30,9 +31,44 @@ var step = 0;
 // current color right
 // next color right
 var colorIndices = [0, 1, 2, 3];
-
 //transition speed
 var gradientSpeed = 0.0;
+window.onload = () => {
+  $("div#gradient").hide();
+  animateBottle();
+  introDialogues();
+  // $("div.ocean").hide();
+  // $("div#gradient").show();
+  // $("div.item").show();
+  setTimeout(function() {
+    $("div.first").hide();
+    $("div#gradient").show();
+    // app.testFunction();
+    app.dispalyItems();
+  }, 12000);
+};
+function introDialogues() {
+  $("div.one").hide();
+  $("div.two").hide();
+  setTimeout(function() {
+    $("#dialogue-1").show("slow");
+  }, 2000);
+  setTimeout(function() {
+    $("#dialogue-1").hide("slow");
+    $("#dialogue-2").show("slow");
+  }, 4000);
+  setTimeout(function() {
+    $("#dialogue-2").hide("slow");
+    $("#dialogue-3").show("slow");
+  }, 6000);
+  setTimeout(function() {
+    $("#dialogue-3").hide("slow");
+    $("#dialogue-4").show("slow");
+  }, 8000);
+  setTimeout(function() {
+    $("#dialogue-4").hide("slow");
+  }, 10000);
+}
 
 function updateGradient() {
   if ($ === undefined) return;
@@ -85,3 +121,41 @@ function updateGradient() {
 }
 
 setInterval(updateGradient, 50);
+
+$.fn.animateTo = function(cssProps, time = 100, easing = "linear") {
+  // Save the value of this (this represents the element that the method was called upon)
+
+  const el = this;
+
+  // Create a new Promise instance of Promise. Promises receive an "executor" function (a function that takes time). And the executor function will receive a resolve function (so that .then will be called), and a reject function (so that .catch will be called)
+
+  const p = new Promise(function(resolve, reject) {
+    // Select the element, and call the built-in animate method
+    // The animate method receives an object of CSS to change, a time to take, an easing function and an on-complete function (called at the end of the animation)
+    // We are using resolve to call the .then method
+
+    $(el).animate(cssProps, time, easing, () => {
+      resolve($(el));
+    });
+  });
+
+  // Return the promise, so that we can use .then
+
+  return p;
+};
+
+const animateBottle = () => {
+  $("#bottle")
+    .animateTo({ right: "150px", top: "400px", left: "300px" }, 8000)
+    .then(function(el) {
+      el.css("transform", "rotate(20deg)");
+    });
+};
+
+setTimeout(function() {
+  $("#d-1").show();
+}, 2000);
+setTimeout(function() {
+  $("#d-1").hide();
+  $("#d-2").show();
+}, 3000);
