@@ -321,12 +321,14 @@ div.two {
 .div.dialogue-container {
   position: relative;
   width: 400px;
+  height: 500px;
 }
 .dialogue-container > div {
   opacity: 0;
 }
 
 div.whale-dialogue {
+  z-index: 9;
   position: absolute;
   background-image: url("https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/6/6b/Turquoise_watercolor_7.png/revision/latest?cb=20171218004049");
   background-size: 200px 200px;
@@ -343,11 +345,14 @@ div.boy-dialogue {
   height: 200px;
 }
 
-#turt {
+#turt,
+#fishy,
+#coral {
   animation: turt-movement 8s infinite;
   position: relative;
   left: -100 px;
   /* top: -270px;   */
+  opacity: 0;
 }
 
 @keyframes turt-movement {
