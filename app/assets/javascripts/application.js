@@ -35,7 +35,6 @@ var colorIndices = [0, 1, 2, 3];
 var gradientSpeed = 0.0;
 window.onload = () => {
   $("div#gradient").hide();
-  animateBottle();
   introDialogues();
   // $("div.ocean").hide();
   // $("div#gradient").show();
@@ -43,6 +42,7 @@ window.onload = () => {
   setTimeout(function() {
     $("div.first").hide();
     $("div#gradient").show();
+    scene1();
     // app.testFunction();
     app.dispalyItems();
   }, 12000);
@@ -152,10 +152,61 @@ const animateBottle = () => {
     });
 };
 
-setTimeout(function() {
-  $("#d-1").show();
-}, 2000);
-setTimeout(function() {
-  $("#d-1").hide();
-  $("#d-2").show();
-}, 3000);
+var tl;
+function scene1() {
+  localStorage.setItem("currentScene", 1);
+  animateBottle();
+  // $('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function (el) {
+  // el.css('transform', 'rotate(20deg)');
+
+  tl = new TimelineLite();
+  // Sequence multiple tweens
+  //Show item
+  //show dialouge
+  //last dialouge with button link to post page
+  //continue button
+  // setTimeout(function s1() {
+  tl.to($("#d-1"), 1, { autoAlpha: 1, delay: 5 })
+    .to($("#d-1"), 1, { autoAlpha: 0 })
+    .to($("#d-2"), 1, { autoAlpha: 1 })
+    .to($("#d-2"), 1, { autoAlpha: 0 })
+    .to($("#d-3"), 1, { autoAlpha: 1 })
+    .to($("#d-3"), 1, { autoAlpha: 0 })
+    .to($("#d-4"), 1, { autoAlpha: 1 });
+
+  // }, 3000);
+  // console.log('Scene 1 starting');
+  window.addEventListener("click", scene2);
+}
+
+function scene2() {
+  window.removeEventListener("click", scene2);
+  localStorage.setItem("currentScene", 2);
+  console.log("Scene 2 starting");
+  window.addEventListener("click", scene3);
+}
+
+function scene3() {
+  window.removeEventListener("click", scene3);
+  localStorage.setItem("currentScene", 3);
+  console.log("Scene 3 starting");
+  window.addEventListener("click", scene4);
+}
+
+function scene4() {
+  window.removeEventListener("click", scene4);
+  localStorage.setItem("currentScene", 4);
+  console.log("Scene 4 starting");
+}
+
+const currentScene = localStorage.getItem("currentScene");
+
+if (currentScene === "2") {
+  scene2();
+} else if (currentScene === "3") {
+  scene3();
+} else if (currentScene === "4") {
+  scene4();
+} else {
+  scene1();
+}

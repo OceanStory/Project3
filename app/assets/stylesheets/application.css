@@ -256,7 +256,7 @@ div.dialogue {
 .whale {
   animation: whale-movement 8s infinite;
   position: relative;
-  left: -100 px;
+  left: -100px;
   /* top: -270px;   */
 }
 @keyframes whale-movement {
@@ -289,9 +289,6 @@ div.dialogue {
   left: 300px;
 }
 
-#d-2 {
-  top: -200px;
-}
 div.first {
   display: flex;
   align-items: center;
@@ -320,4 +317,61 @@ div.two {
   background-size: 200px 200px;
   width: 200px;
   height: 200px;
+}
+.div.dialogue-container {
+  position: relative;
+  width: 400px;
+}
+.dialogue-container > div {
+  opacity: 0;
+}
+
+div.whale-dialogue {
+  position: absolute;
+  background-image: url("https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/6/6b/Turquoise_watercolor_7.png/revision/latest?cb=20171218004049");
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+}
+div.boy-dialogue {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("https://www.onlygfx.com/wp-content/uploads/2016/09/watercolor-circle-blue.png");
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+}
+
+#turt {
+  animation: turt-movement 8s infinite;
+  position: relative;
+  left: -100 px;
+  /* top: -270px;   */
+}
+
+@keyframes turt-movement {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+a {
+  width: 1000px;
+}
+
+#btn {
+  width: 100px;
 }
