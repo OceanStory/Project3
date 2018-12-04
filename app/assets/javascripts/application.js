@@ -15,6 +15,11 @@
 //= require turbolinks
 //= require_tree .
 
+const DEBUG = true;
+if (DEBUG) {
+  localStorage.clear();
+}
+
 var app = app || {};
 var colors = new Array([ 0, 100, 100 ], [ 0, 40, 100 ], [ 0, 35, 100 ], [ 0, 50, 100 ], [ 0, 20, 100 ], [ 0, 12, 0 ]);
 var step = 0;
@@ -26,6 +31,7 @@ var step = 0;
 var colorIndices = [ 0, 1, 2, 3 ];
 //transition speed
 var gradientSpeed = 0.0;
+<<<<<<< HEAD
 window.onload = () => {
 	$('div#gradient').hide();
 	introDialogues();
@@ -40,6 +46,47 @@ window.onload = () => {
 		app.dispalyItems();
 	}, 12000);
 };
+=======
+
+function start() {
+  $("div#gradient").hide();
+  const currentScene = localStorage.getItem("currentScene");
+  let time = 0;
+  if (currentScene === "1" || !currentScene) {
+    time = 11000;
+    introDialogues();
+  }
+  //  these comments
+  //  $("div.ocean").hide();
+  // $("div#gradient").show();
+  //  $("div.item").show();
+  //  these end
+  setTimeout(function() {
+    $("div.first").hide();
+    $("div#gradient").show();
+    // debugger;
+    if (currentScene === "2") {
+      scene2();
+    } else if (currentScene === "3") {
+      scene3();
+    } else if (currentScene === "4") {
+      scene4();
+    } else if (currentScene === "5") {
+      scene5();
+    } else {
+      scene1();
+    }
+    app.dispalyItems();
+  }, time);
+  // const currentScene = localStorage.getItem("currentScene");
+}
+
+// window.onload = start;
+// window.addEventListener("turbolinks:load", start);
+$(document).on("turbolinks:load", start);
+// <<this we don't want => app.testFunction();
+
+>>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 function introDialogues() {
 	$('div.one').hide();
 	$('div.two').hide();
@@ -127,14 +174,26 @@ $.fn.animateTo = function(cssProps, time = 100, easing = 'linear') {
 	return p;
 };
 
+<<<<<<< HEAD
 const animateBottle = () => {
 	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
 		el.css('opacity', '0');
 	});
+=======
+const animateBottle = (time = 8000) => {
+  console.log("I'm a bottle");
+  $("#bottle")
+    .animateTo({ right: "150px", top: "400px", left: "300px" }, time)
+    .then(function(el) {
+      el.css("opacity", "0");
+    });
+>>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 };
 
 var tl;
+
 function scene1() {
+<<<<<<< HEAD
 	localStorage.setItem('currentScene', 1);
 	animateBottle();
 	// $('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function (el) {
@@ -163,23 +222,154 @@ function scene1() {
 		tl.to($('#d-4'), 1, { autoAlpha: 0 });
 		scene2();
 	});
+=======
+  console.log("SCENE 1");
+  localStorage.setItem("currentScene", 1);
+  animateBottle();
+  // setTimeout(animateBottle(), 80000);
+
+  // $('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function (el) {
+  // el.css('transform', 'rotate(20deg)');
+
+  tl = new TimelineLite();
+  // Sequence multiple tweens
+  //Show item
+  //show dialouge
+  //last dialouge with button link to post page
+  //continue button
+  // setTimeout(function s1() {
+  tl.to($("#d-1"), 1, { autoAlpha: 1, delay: 5 })
+    .to($("#d-1"), 1, { autoAlpha: 0 })
+    .to($("#d-2"), 1, { autoAlpha: 1 })
+    .to($("#d-2"), 1, { autoAlpha: 0 })
+    .to($("#d-3"), 1, { autoAlpha: 1 })
+    .to($("#d-3"), 1, { autoAlpha: 0 })
+    .to($("#d-4"), 1, { autoAlpha: 1 });
+
+  // }, 3000);
+  // console.log('Scene 1 starting');
+  // window.addEventListener("click", scene2);
+
+  $("#read-more").on("click", function() {
+    console.log("E");
+    tl.pause();
+  });
+  $("#back").on("click", function() {
+    tl.play(scene2());
+  });
+
+  $("#btn").on("click", function() {
+    tl.to($("#d-4"), 1, { autoAlpha: 0 });
+    scene2();
+  });
+>>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 }
 
+// tl.pause();
+// const lastTime = parseFloat(localStorage.getItem('tl') || 0);
+// localStorage.setItem('tl', lastTime);
+// setInterval(() => {
+// 	localStorage.setItem('tl', lastTime + performance.now());
+// }, 1000);
+// tl.play(lastTime / 1000);
+// console.log(`The animation started ${lastTime / 1000} seconds in`);
+
+// scene1
+
+// Show a button
+// If the user clicks the Continue button, play Scene 2
+// IF the user clicks the other button, go to wherever that button says to go
+
+// ---------------------------------------------------- END OF SCENE 1 -------------------------------------------------------//
+
 function scene2() {
+<<<<<<< HEAD
 	window.removeEventListener('click', scene2);
 	localStorage.setItem('currentScene', 2);
 	console.log('Scene 2 starting');
 	window.addEventListener('click', scene3);
+=======
+  animateBottle(0);
+
+  // window.removeEventListener("click", scene2);
+  $("#btn").off("click");
+  // setTimeout(function() {
+  //   $("#fishy").show();
+  // }, 1000);
+
+  tl = new TimelineLite();
+  tl.to($("#fishy"), 1, {
+    autoAlpha: 1,
+    delay: 1
+  })
+    .to($("#d-1"), 1, { autoAlpha: 1 })
+    .to($("#d-1"), 1, { autoAlpha: 0 })
+    .to($("#d-4"), 1, { autoAlpha: 1 });
+
+  // window.addEventListener("click", scene3);
+  localStorage.setItem("currentScene", 2);
+  console.log("Scene 2 starting");
+
+  $("#btn").on("click", function() {
+    tl.to($("#d-4"), 1, { autoAlpha: 0 });
+    tl.to($("#fishy"), 0.3, { autoAlpha: 0 });
+    scene3();
+  });
+
+  $("#read-more").on("click", function() {
+    tl.pause();
+  });
+  $("#back").on("click", function() {
+    tl.play(scene3());
+  });
+>>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 }
 
+// ---------------------------------------------------- END OF SCENE 2 -------------------------------------------------------//
+
 function scene3() {
+<<<<<<< HEAD
 	window.removeEventListener('click', scene3);
 	localStorage.setItem('currentScene', 3);
 	console.log('Scene 3 starting');
 	window.addEventListener('click', scene4);
+=======
+  animateBottle(0);
+
+  // window.removeEventListener("click", scene3);
+  $("#btn").off("click");
+  tl = new TimelineLite();
+  tl.to($("#turt"), 1, {
+    autoAlpha: 1,
+    delay: 5
+  })
+    .to($("#d-1"), 1, { autoAlpha: 1 })
+    .to($("#d-1"), 1, { autoAlpha: 0 })
+    .to($("#d-4"), 1, { autoAlpha: 1 });
+
+  localStorage.setItem("currentScene", 3);
+  console.log("Scene 3 starting");
+
+  $("#btn").on("click", function() {
+    tl.to($("#d-4"), 1, { autoAlpha: 0 });
+    tl.to($("#turt"), 0.3, { autoAlpha: 0 });
+    scene4();
+  });
+  $("#read-more").on("click", function() {
+    tl.pause();
+  });
+  $("#back").on("click", function() {
+    tl.play(scene4());
+  });
+
+  // window.addEventListener("click", scene4);
+>>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 }
 
+// ---------------------------------------------------- END OF SCENE 3 -------------------------------------------------------//
+
 function scene4() {
+<<<<<<< HEAD
 	window.removeEventListener('click', scene4);
 	localStorage.setItem('currentScene', 4);
 	console.log('Scene 4 starting');
@@ -195,4 +385,36 @@ if (currentScene === '2') {
 	scene4();
 } else {
 	scene1();
+=======
+  animateBottle(0);
+
+  // window.removeEventListener("click", scene3);
+  $("#btn").off("click");
+  tl = new TimelineLite();
+  tl.to($("#coral"), 1, {
+    autoAlpha: 1,
+    delay: 5
+  })
+    .to($("#d-2"), 1, { autoAlpha: 1 })
+    .to($("#d-2"), 1, { autoAlpha: 0 })
+    .to($("#d-4"), 1, { autoAlpha: 1 });
+
+  localStorage.setItem("currentScene", 4);
+  console.log("Scene 4 starting");
+
+  $("#btn").on("click", function() {
+    tl.to($("#d-4"), 1, { autoAlpha: 0 });
+    tl.to($("#coral"), 0.3, { autoAlpha: 0 });
+    scene5();
+  });
+
+  $("#read-more").on("click", function() {
+    tl.pause();
+  });
+  $("#back").on("click", function() {
+    tl.play(scene5());
+  });
+>>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 }
+
+// ---------------------------------------------------- END OF SCENE 4 -------------------------------------------------------//
