@@ -129,7 +129,7 @@ $.fn.animateTo = function(cssProps, time = 100, easing = 'linear') {
 
 const animateBottle = () => {
 	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
-		el.css('transform', 'rotate(20deg)');
+		el.css('opacity', '0');
 	});
 };
 
@@ -158,7 +158,11 @@ function scene1() {
 
 	// }, 3000);
 	// console.log('Scene 1 starting');
-	window.addEventListener('click', scene2);
+	// window.addEventListener('click', scene2);
+	$('#btn').click(function() {
+		tl.to($('#d-4'), 1, { autoAlpha: 0 });
+		scene2();
+	});
 }
 
 function scene2() {
