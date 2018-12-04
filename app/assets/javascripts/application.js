@@ -17,7 +17,7 @@
 
 const DEBUG = true;
 if (DEBUG) {
-  localStorage.clear();
+	localStorage.clear();
 }
 
 var app = app || {};
@@ -31,68 +31,52 @@ var step = 0;
 var colorIndices = [ 0, 1, 2, 3 ];
 //transition speed
 var gradientSpeed = 0.0;
-<<<<<<< HEAD
-window.onload = () => {
+
+function start() {
 	$('div#gradient').hide();
-	introDialogues();
-	// $("div.ocean").hide();
+	const currentScene = localStorage.getItem('currentScene');
+	let time = 0;
+	if (currentScene === '1' || !currentScene) {
+		time = 11000;
+		introDialogues();
+	}
+	//  these comments
+	//  $("div.ocean").hide();
 	// $("div#gradient").show();
-	// $("div.item").show();
+	//  $("div.item").show();
+	//  these end
 	setTimeout(function() {
 		$('div.first').hide();
 		$('div#gradient').show();
-		scene1();
-		// app.testFunction();
-		app.dispalyItems();
-	}, 12000);
-};
-=======
-
-function start() {
-  $("div#gradient").hide();
-  const currentScene = localStorage.getItem("currentScene");
-  let time = 0;
-  if (currentScene === "1" || !currentScene) {
-    time = 11000;
-    introDialogues();
-  }
-  //  these comments
-  //  $("div.ocean").hide();
-  // $("div#gradient").show();
-  //  $("div.item").show();
-  //  these end
-  setTimeout(function() {
-    $("div.first").hide();
-    $("div#gradient").show();
-    // debugger;
-    if (currentScene === "2") {
-      scene2();
-    } else if (currentScene === "3") {
-      scene3();
-    } else if (currentScene === "4") {
-      scene4();
-    } else if (currentScene === "5") {
-      scene5();
-    } else {
-      scene1();
-    }
-    app.dispalyItems();
-  }, time);
-  // const currentScene = localStorage.getItem("currentScene");
+		// debugger;
+		if (currentScene === '2') {
+			scene2();
+		} else if (currentScene === '3') {
+			scene3();
+		} else if (currentScene === '4') {
+			scene4();
+		} else if (currentScene === '5') {
+			scene5();
+		} else {
+			scene1();
+		}
+		// app.dispalyItems();
+	}, time);
+	// const currentScene = localStorage.getItem("currentScene");
 }
 
 // window.onload = start;
 // window.addEventListener("turbolinks:load", start);
-$(document).on("turbolinks:load", start);
+$(document).on('turbolinks:load', start);
 // <<this we don't want => app.testFunction();
 
->>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 function introDialogues() {
 	$('div.one').hide();
 	$('div.two').hide();
 	setTimeout(function() {
 		$('#dialogue-1').show('slow');
 	}, 2000);
+
 	setTimeout(function() {
 		$('#dialogue-1').hide('slow');
 		$('#dialogue-2').show('slow');
@@ -150,7 +134,7 @@ function updateGradient() {
 	}
 }
 
-setInterval(updateGradient, 50);
+// setInterval(updateGradient, 50);
 
 $.fn.animateTo = function(cssProps, time = 100, easing = 'linear') {
 	// Save the value of this (this represents the element that the method was called upon)
@@ -173,29 +157,26 @@ $.fn.animateTo = function(cssProps, time = 100, easing = 'linear') {
 
 	return p;
 };
-
-<<<<<<< HEAD
-const animateBottle = () => {
-	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function(el) {
+const animateCharacters = (time = 5000) => {
+	$('.dive').animateTo({ right: '150px', top: '0px', left: '50px' }, time);
+};
+const animateBottle = (time = 8000) => {
+	console.log("I'm a bottle");
+	$('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, time).then(function(el) {
 		el.css('opacity', '0');
 	});
-=======
-const animateBottle = (time = 8000) => {
-  console.log("I'm a bottle");
-  $("#bottle")
-    .animateTo({ right: "150px", top: "400px", left: "300px" }, time)
-    .then(function(el) {
-      el.css("opacity", "0");
-    });
->>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 };
 
 var tl;
 
 function scene1() {
-<<<<<<< HEAD
+	console.log('SCENE 1');
+	animateCharacters();
 	localStorage.setItem('currentScene', 1);
-	animateBottle();
+
+	// animateBottle();
+	setTimeout(animateBottle(), 90000);
+
 	// $('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function (el) {
 	// el.css('transform', 'rotate(20deg)');
 
@@ -206,8 +187,9 @@ function scene1() {
 	//last dialouge with button link to post page
 	//continue button
 	// setTimeout(function s1() {
+	// , delay: 5
 	tl
-		.to($('#d-1'), 1, { autoAlpha: 1, delay: 5 })
+		.to($('#d-1'), 1, { autoAlpha: 1 })
 		.to($('#d-1'), 1, { autoAlpha: 0 })
 		.to($('#d-2'), 1, { autoAlpha: 1 })
 		.to($('#d-2'), 1, { autoAlpha: 0 })
@@ -217,52 +199,20 @@ function scene1() {
 
 	// }, 3000);
 	// console.log('Scene 1 starting');
-	// window.addEventListener('click', scene2);
-	$('#btn').click(function() {
+	// window.addEventListener("click", scene2);
+
+	$('#read-more').on('click', function() {
+		console.log('E');
+		tl.pause();
+	});
+	$('#back').on('click', function() {
+		tl.play(scene2());
+	});
+
+	$('#btn').on('click', function() {
 		tl.to($('#d-4'), 1, { autoAlpha: 0 });
 		scene2();
 	});
-=======
-  console.log("SCENE 1");
-  localStorage.setItem("currentScene", 1);
-  animateBottle();
-  // setTimeout(animateBottle(), 80000);
-
-  // $('#bottle').animateTo({ right: '150px', top: '400px', left: '300px' }, 8000).then(function (el) {
-  // el.css('transform', 'rotate(20deg)');
-
-  tl = new TimelineLite();
-  // Sequence multiple tweens
-  //Show item
-  //show dialouge
-  //last dialouge with button link to post page
-  //continue button
-  // setTimeout(function s1() {
-  tl.to($("#d-1"), 1, { autoAlpha: 1, delay: 5 })
-    .to($("#d-1"), 1, { autoAlpha: 0 })
-    .to($("#d-2"), 1, { autoAlpha: 1 })
-    .to($("#d-2"), 1, { autoAlpha: 0 })
-    .to($("#d-3"), 1, { autoAlpha: 1 })
-    .to($("#d-3"), 1, { autoAlpha: 0 })
-    .to($("#d-4"), 1, { autoAlpha: 1 });
-
-  // }, 3000);
-  // console.log('Scene 1 starting');
-  // window.addEventListener("click", scene2);
-
-  $("#read-more").on("click", function() {
-    console.log("E");
-    tl.pause();
-  });
-  $("#back").on("click", function() {
-    tl.play(scene2());
-  });
-
-  $("#btn").on("click", function() {
-    tl.to($("#d-4"), 1, { autoAlpha: 0 });
-    scene2();
-  });
->>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
 }
 
 // tl.pause();
@@ -283,138 +233,109 @@ function scene1() {
 // ---------------------------------------------------- END OF SCENE 1 -------------------------------------------------------//
 
 function scene2() {
-<<<<<<< HEAD
-	window.removeEventListener('click', scene2);
+	animateBottle(0);
+
+	// window.removeEventListener("click", scene2);
+	$('#btn').off('click');
+	// setTimeout(function() {
+	//   $("#fishy").show();
+	// }, 1000);
+
+	tl = new TimelineLite();
+	tl
+		.to($('#octopus'), 1, {
+			autoAlpha: 1,
+			delay: 1
+		})
+		.to($('#d-1'), 1, { autoAlpha: 1 })
+		.to($('#d-1'), 1, { autoAlpha: 0 })
+		.to($('#d-4'), 1, { autoAlpha: 1 });
+
+	// window.addEventListener("click", scene3);
 	localStorage.setItem('currentScene', 2);
 	console.log('Scene 2 starting');
-	window.addEventListener('click', scene3);
-=======
-  animateBottle(0);
 
-  // window.removeEventListener("click", scene2);
-  $("#btn").off("click");
-  // setTimeout(function() {
-  //   $("#fishy").show();
-  // }, 1000);
+	$('#btn').on('click', function() {
+		tl.to($('#d-4'), 1, { autoAlpha: 0 });
+		tl.to($('#octopus'), 0.3, { autoAlpha: 0 });
+		scene3();
+	});
 
-  tl = new TimelineLite();
-  tl.to($("#fishy"), 1, {
-    autoAlpha: 1,
-    delay: 1
-  })
-    .to($("#d-1"), 1, { autoAlpha: 1 })
-    .to($("#d-1"), 1, { autoAlpha: 0 })
-    .to($("#d-4"), 1, { autoAlpha: 1 });
-
-  // window.addEventListener("click", scene3);
-  localStorage.setItem("currentScene", 2);
-  console.log("Scene 2 starting");
-
-  $("#btn").on("click", function() {
-    tl.to($("#d-4"), 1, { autoAlpha: 0 });
-    tl.to($("#fishy"), 0.3, { autoAlpha: 0 });
-    scene3();
-  });
-
-  $("#read-more").on("click", function() {
-    tl.pause();
-  });
-  $("#back").on("click", function() {
-    tl.play(scene3());
-  });
->>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
+	$('#read-more').on('click', function() {
+		tl.pause();
+	});
+	$('#back').on('click', function() {
+		tl.play(scene3());
+	});
 }
 
 // ---------------------------------------------------- END OF SCENE 2 -------------------------------------------------------//
 
 function scene3() {
-<<<<<<< HEAD
-	window.removeEventListener('click', scene3);
+	animateBottle(0);
+
+	// window.removeEventListener("click", scene3);
+	$('#btn').off('click');
+	tl = new TimelineLite();
+	tl
+		.to($('#turt'), 1, {
+			autoAlpha: 1,
+			delay: 5
+		})
+		.to($('#d-1'), 1, { autoAlpha: 1 })
+		.to($('#d-1'), 1, { autoAlpha: 0 })
+		.to($('#d-4'), 1, { autoAlpha: 1 });
+
 	localStorage.setItem('currentScene', 3);
 	console.log('Scene 3 starting');
-	window.addEventListener('click', scene4);
-=======
-  animateBottle(0);
 
-  // window.removeEventListener("click", scene3);
-  $("#btn").off("click");
-  tl = new TimelineLite();
-  tl.to($("#turt"), 1, {
-    autoAlpha: 1,
-    delay: 5
-  })
-    .to($("#d-1"), 1, { autoAlpha: 1 })
-    .to($("#d-1"), 1, { autoAlpha: 0 })
-    .to($("#d-4"), 1, { autoAlpha: 1 });
+	$('#btn').on('click', function() {
+		tl.to($('#d-4'), 1, { autoAlpha: 0 });
+		tl.to($('#turt'), 0.3, { autoAlpha: 0 });
+		scene4();
+	});
+	$('#read-more').on('click', function() {
+		tl.pause();
+	});
+	$('#back').on('click', function() {
+		tl.play(scene4());
+	});
 
-  localStorage.setItem("currentScene", 3);
-  console.log("Scene 3 starting");
-
-  $("#btn").on("click", function() {
-    tl.to($("#d-4"), 1, { autoAlpha: 0 });
-    tl.to($("#turt"), 0.3, { autoAlpha: 0 });
-    scene4();
-  });
-  $("#read-more").on("click", function() {
-    tl.pause();
-  });
-  $("#back").on("click", function() {
-    tl.play(scene4());
-  });
-
-  // window.addEventListener("click", scene4);
->>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
+	// window.addEventListener("click", scene4);
 }
 
 // ---------------------------------------------------- END OF SCENE 3 -------------------------------------------------------//
 
 function scene4() {
-<<<<<<< HEAD
-	window.removeEventListener('click', scene4);
+	animateBottle(0);
+
+	// window.removeEventListener("click", scene3);
+	$('#btn').off('click');
+	tl = new TimelineLite();
+	tl
+		.to($('#coral'), 1, {
+			autoAlpha: 1,
+			delay: 5
+		})
+		.to($('#d-2'), 1, { autoAlpha: 1 })
+		.to($('#d-2'), 1, { autoAlpha: 0 })
+		.to($('#d-4'), 1, { autoAlpha: 1 });
+
 	localStorage.setItem('currentScene', 4);
 	console.log('Scene 4 starting');
-}
 
-const currentScene = localStorage.getItem('currentScene');
+	$('#btn').on('click', function() {
+		tl.to($('#d-4'), 1, { autoAlpha: 0 });
+		tl.to($('#coral'), 0.3, { autoAlpha: 0 });
+		scene5();
+	});
 
-if (currentScene === '2') {
-	scene2();
-} else if (currentScene === '3') {
-	scene3();
-} else if (currentScene === '4') {
-	scene4();
-} else {
-	scene1();
-=======
-  animateBottle(0);
-
-  // window.removeEventListener("click", scene3);
-  $("#btn").off("click");
-  tl = new TimelineLite();
-  tl.to($("#coral"), 1, {
-    autoAlpha: 1,
-    delay: 5
-  })
-    .to($("#d-2"), 1, { autoAlpha: 1 })
-    .to($("#d-2"), 1, { autoAlpha: 0 })
-    .to($("#d-4"), 1, { autoAlpha: 1 });
-
-  localStorage.setItem("currentScene", 4);
-  console.log("Scene 4 starting");
-
-  $("#btn").on("click", function() {
-    tl.to($("#d-4"), 1, { autoAlpha: 0 });
-    tl.to($("#coral"), 0.3, { autoAlpha: 0 });
-    scene5();
-  });
-
-  $("#read-more").on("click", function() {
-    tl.pause();
-  });
-  $("#back").on("click", function() {
-    tl.play(scene5());
-  });
->>>>>>> 8c8e4b5200b42ad8b8df185562bc17973047bc96
+	$('#read-more').on('click', function() {
+		tl.pause();
+	});
+	$('#back').on('click', function() {
+		tl.play(scene5());
+	});
 }
 
 // ---------------------------------------------------- END OF SCENE 4 -------------------------------------------------------//
