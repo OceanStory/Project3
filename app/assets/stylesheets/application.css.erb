@@ -15,7 +15,7 @@
  */
  body{
 	 
-	background-image: url(<%= asset_path 'Clean-Background-.png' %>);
+	background-image: url(<%= asset_path 'blue-backgrand.png' %>);
  }
 
 body {
@@ -327,30 +327,30 @@ div.one {
 	/* background: rgba(245, 245, 245, 0.493); */
 	background-image: url(<%= asset_path 'speech1.png' %>);
 	background-size: 100% 100%;
-
+    left: -400px;
 	/* width: 350px;
 	height: 300px; */
 }
 p.dialogue{
-	border: 2px solid;
 	padding: 60px;
-	/* margin: 5px; */
-	/* padding-left: 5px; */
 }
 div.two {
 	align-self: flex-end;
-		background: rgba(245, 245, 245, 0.493);
-	background-image: url(<%= asset_path 'speech1.png' %>);
-
+	background-image: url(<%= asset_path 'speech1-rev.png' %>);
 	/* background-image: url("https://www.onlygfx.com/wp-content/uploads/2016/09/watercolor-circle-blue.png"); */
 	background-size: 100% 100%;
-	width: 200px;
-	height: 200px;
+	right: -25px;
+    top: 209px;
 }
-.div.dialogue-container {
+div.dialogue-container {
 	position: relative;
+	/* display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; */
 	width: 400px;
-	height: 500px;
+	/* height: 500px; */
+
 }
 .dialogue-container > div {
 	opacity: 0;
@@ -359,22 +359,33 @@ div.two {
 div.whale-dialogue {
 	z-index: 9;
 	position: absolute;
-	background:	background: rgba(245, 245, 245, 0.493);
-
-	background-size: 200px 200px;
-	width: 200px;
-	height: 200px;
+	/* background-size: 100% 100%; */
+	/* background:	background: rgba(245, 245, 245, 0.493); */
+	/* background-image: url(<%= asset_path 'speech1-rev.png' %>);
+	bottom: 1500px;
+    left: 400px;
+	/* background-size: 200px 200px; */	 
+	/* align-self: flex-end; */
+	background-image: url(<%= asset_path 'speech1.png' %>);
+	/* background-image: url("https://www.onlygfx.com/wp-content/uploads/2016/09/watercolor-circle-blue.png"); */
+	background-size: 100% 100%;
+	    left: 200px;
+    bottom: 800px;
 }
 div.boy-dialogue {
-	position: absolute;
+	/* position: absolute;
 	top: 0px;
 	left: 0px;
-		background: rgba(245, 245, 245, 0.493);
-
+	background: rgba(245, 245, 245, 0.493); */
 	/* background-image: url("https://www.onlygfx.com/wp-content/uploads/2016/09/watercolor-circle-blue.png"); */
-	background-size: 200px 200px;
+	/* background-size: 200px 200px;
 	width: 200px;
-	height: 200px;
+	height: 200px; */
+	align-self: flex-start;
+	/* background: rgba(245, 245, 245, 0.493); */
+	background-image: url(<%= asset_path 'speech1-rev.png' %>);
+	background-size: 100% 100%;
+    left: -400px;
 }
 
 #turt,
@@ -394,8 +405,7 @@ div.boy-dialogue {
 
 #turt{
 	top: -335px;
-    left: 270px;
-	
+    left: 270px;	
 }
 
 #coral{
