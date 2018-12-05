@@ -1,24 +1,64 @@
-# README
+# Ocean Story 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### [ Heroku Link](https://oceanstory.herokuapp.com/)
 
-* Ruby version
+## Team Members:
+- Atheer [https://github.com/atheer10]
+- Halima [https://github.com/Halima95]
+- Sara Alhamed (Designer).
+- Leena [https://github.com/leanaAlq]
+- Noura Alhadlaq.[https://github.com/NouraAlhadlaq]
 
-* System dependencies
+## Description :
 
-* Configuration
+A full-stack application using Ruby on rails.
 
-* Database creation
+## Concept :
 
-* Database initialization
+The idea of this project is to build an interactive story to increase awareness of ocean pollution.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built with :
 
-* Deployment instructions
+- [Ruby on Rails](https://rubyonrails.org/)
+- HTML
+- CSS
+- Javascript
+- Jquery
 
-* ...
+## Additional Libraries :
+
+- [GreenSock](https://greensock.com/timelinelite)
+- [Google fonts](https://fonts.google.com/)
+
+## Gems used :
+- Devise
+
+## Hosting :
+
+- [Heroku](https://www.heroku.com/)
+
+
+## Approach :
+
+First of all was deciding what we actually wanted to build , and dividing the work between team members using [Trello](https://trello.com). Getting used with [Github](https://github.com). 
+
+## Challenges:
+
+This entire project was both fun and challenging to work with. Firstly , it was focusing on the main functionality of the website to be interactive. Fixing positions, animation and timing was also a challenge. 
+
+
+## What's next:
+
+There's many additons to be added to this project such as : 
+- Adding Sounds.
+- More interactions.
+- Posts Update.
+- English & Arabic content. 
+
+## Credits:
+
+- Jack Jeffress
+- Moath Althawad
+- Kane
