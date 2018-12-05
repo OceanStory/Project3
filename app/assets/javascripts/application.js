@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-const DEBUG = true;
+const DEBUG = false;
 if (DEBUG) {
   localStorage.clear();
 }
@@ -175,9 +175,10 @@ $.fn.animateTo = function(cssProps, time = 100, easing = "linear") {
   return p;
 };
 const animateCharacters = (time = 1000) => {
-  $(".dive").animateTo({ right: "150px", top: "0px", left: "50px" }, time);
+  $(".dive").animateTo({ right: "150px", top: "150px", left: "50px" }, time);
 };
-const animateBottle = (time = 33000) => {
+
+const animateBottle = (time = 10000) => {
   console.log("I'm a bottle");
   $("#bottle")
     .animateTo({ right: "150px", top: "400px", left: "300px" }, time)
@@ -206,13 +207,13 @@ function scene1() {
   //continue button
   // setTimeout(function s1() {
   // , delay: 5
-  tl.to($("#d-1"), 1, { autoAlpha: 1, delay: 5 })
-    .to($("#d-1"), 1, { autoAlpha: 0 })
-    .to($("#d-2"), 1, { autoAlpha: 1 })
-    .to($("#d-2"), 1, { autoAlpha: 0 })
-    .to($("#d-3"), 1, { autoAlpha: 1 })
-    .to($("#d-3"), 1, { autoAlpha: 0 })
-    .to($("#d-4"), 1, { autoAlpha: 1 });
+  tl.to($("#d-1"), 5, { autoAlpha: 1, delay: 5 })
+    .to($("#d-1"), 0, { autoAlpha: 0 })
+    .to($("#d-2"), 5, { autoAlpha: 1 })
+    .to($("#d-2"), 0, { autoAlpha: 0 })
+    .to($("#d-3"), 5, { autoAlpha: 1 })
+    .to($("#d-3"), 0, { autoAlpha: 0 })
+    .to($("#d-4"), 5, { autoAlpha: 1 });
 
   // }, 3000);
   // console.log('Scene 1 starting');
@@ -295,7 +296,7 @@ function scene3() {
   tl = new TimelineLite();
   tl.to($("#turt"), 1, {
     autoAlpha: 1,
-    delay: 5
+    delay: 1
   })
     .to($("#d-1"), 1, { autoAlpha: 1 })
     .to($("#d-1"), 1, { autoAlpha: 0 })
@@ -327,10 +328,11 @@ function scene4() {
   // window.removeEventListener("click", scene3);
   $("#btn").off("click");
   tl = new TimelineLite();
-  tl.to($("#coral"), 1, {
-    autoAlpha: 1,
-    delay: 5
-  })
+  tl.to($("#grass"), 1, { autoAlpha: 1 })
+    .to($("#coral"), 1, {
+      autoAlpha: 1,
+      delay: 0
+    })
     .to($("#d-2"), 1, { autoAlpha: 1 })
     .to($("#d-2"), 1, { autoAlpha: 0 })
     .to($("#d-4"), 1, { autoAlpha: 1 });
@@ -353,3 +355,24 @@ function scene4() {
 }
 
 // ---------------------------------------------------- END OF SCENE 4 -------------------------------------------------------//
+function scene5() {
+  animateBottle(0);
+
+  // window.removeEventListener("click", scene3);
+  $("#btn").off("click");
+  tl = new TimelineLite();
+  tl.to($("#dirt"), 1, { autoAlpha: 1 })
+    .to($(".help-1"), 5, { autoAlpha: 1, ease: Bounce.easeOut })
+    .to($(".help-1"), 0, { autoAlpha: 0, ease: Bounce.easeOut })
+    .to($(".help-2"), 5, { autoAlpha: 1, ease: Bounce.easeOut })
+    .to($(".help-2"), 0, { autoAlpha: 0, ease: Bounce.easeOut })
+    .to($(".help-3"), 5, { autoAlpha: 1, ease: Bounce.easeOut })
+    .to($(".help-3"), 0, { autoAlpha: 0, ease: Bounce.easeOut })
+    .to($(".help-4"), 5, { autoAlpha: 1, ease: Bounce.easeOut })
+    .to($(".help-4"), 0, { autoAlpha: 0, ease: Bounce.easeOut })
+    .to($(".help-5"), 5, { autoAlpha: 1, ease: Bounce.easeOut })
+    .to($(".help-5"), 0, { autoAlpha: 0, ease: Bounce.easeOut });
+
+  localStorage.setItem("currentScene", 5);
+  console.log("Scene 5 starting");
+}

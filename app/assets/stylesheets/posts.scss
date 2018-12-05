@@ -1,22 +1,150 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the Posts controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+.post {
+  background-image: url("t2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
 
-// h1{
+// .crab1{
+// position: relative;
+// top: 5600px;
+// right: 240px;
+// }
 
+// .crab2{
+// position: relative;
+// top: 5200px;
+// left: 350px;
+// }
+
+// .reef1{
+//   position: relative;
+// top: 6350px;
+// left: 600px;
+// }
+// .reef2{
+//   position: relative;
+// top: 6350px;
+// right: 500px;
+// }
+// .shells1{
+//   position: relative;
+//   top:3000px;
+//   right: 240px;
+// }
+// .shells2{
+//   position: relative;
+//   top:4000px;
+//   left: 420px;
+//   transform: rotate(90deg);
+// }
+
+// .shells3{
+//   position: relative;
+//   top:4000px;
+//   right:200px;
+//   transform: rotate(90deg);
+// }
+// .shells4{
+//   position: relative;
+//   top:4000px;
+//   left:380px;
+//   transform: rotate(160deg);
+// }
+
+// .starfish1{
+//   position: relative;
+// top: 600px;
+// right: 240px;
+// }
+
+// .starfish2{
+//   position: relative;
+// top: 600px;
+// left: 240px;
+// }
+// .bub{
+
+//   width: 200px;
+//   height: 200px;
+//   position: relative;
+//   bottom: 100px;
+// }
+// .hpost{
+// font-size: 50px;
 // position: relative;
 // left: 560px;
-// bottom: 390px;
+// // bottom: 390px;
 // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 // }
 
-.contentp {
+// .contentp {
+//   position: relative;
+//   border: 2px solid lightblue;
+//   border-radius: 10px;
+//     background-image:url("t2.jpeg");
+//       //  background-image: url("Octopus.png");
+//     background-repeat: no-repeat;
+//      background-size: 100% 100%;
+//      background-position: bottom center;
+//   // left: 560px;
+//   // bottom: 90px;
+//   margin: 10%;
+//   font-size: 30px;
+// }
+
+// #back{
+//   position: relative;
+// font-size: 20px;
+// // left: 170px;
+// // bottom: 190px;
+
+// }
+
+// a{
+//   text-decoration-line: none;
+
+// }
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+}
+.post-second {
+  display: flex;
+  flex-direction: row;
+}
+
+.imgpad {
+  padding: 70px;
+}
+.imgpad1 {
+  padding: 70px;
   position: relative;
-  border: 2px solid white;
-  border-radius: 10px;
-  // left: 560px;
-  bottom: 490px;
-  margin: 10%;
+  left: 50px;
+}
+
+.contentp {
+  // position: relative;
+  // // border: 2px solid lightblue;
+  // // border-radius: 10px;
+
+  // // margin: 10%;
+  // font-size: 30px;
+  // padding: 3px;
+  font-family: "Quicksand", sans-serif;
   font-size: 30px;
+}
+#btnjou {
+  position: relative;
+  left: 380px;
+  top: 30px;
+  // bottom: 78px;
+  border-radius: 6px;
+  border: 2px solid pink;
+  // opacity: 0.5;
 }

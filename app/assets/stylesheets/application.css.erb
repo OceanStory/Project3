@@ -33,6 +33,7 @@ body {
 	transform: rotate(10deg);
 }
 img.humantwo{
+animation: whale-movement 8s infinite;
 position:absolute;
 	height: 300px;
 	width: 300px;
@@ -40,6 +41,7 @@ position:absolute;
 	margin-right: 30px;
 }
 img.whaletwo{
+animation: whale-movement 8s infinite;
 position:absolute;
 width: 550px;
 	height: 550px;
@@ -346,8 +348,11 @@ div.one {
 	height: 300px; */
 }
 p.dialogue{
-	padding: 60px;
+	padding: 29px;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 26px;
 }
+
 div.two {
 	align-self: flex-end;
 	background-image: url(<%= asset_path 'speech1-rev.png' %>);
@@ -378,16 +383,14 @@ position: absolute;
     left: 70px;
 }
 div.whale-dialogue {
-	
-	position: absolute;
-	background-image: url(<%= asset_path 'speech1-rev.png' %>);
-	 background-size: 100% 100%; 
-	width: 500px;
+    position: absolute;
+    background-image: url(<%= asset_path 'speech1-rev.png' %>);
+     background-size: 100% 100%; 
+    width: 500px;
     height: 200px;
-    left: 800px;
-    top: 180px;
-	
-	    }
+    left: 615px;
+       top: 90px;
+}
    
 div.boy-dialogue {
 position:absolute;
@@ -397,7 +400,7 @@ background-size: 100% 100%;
 
 
 width: 400px;
-    height: 300px;
+   height: 200px;
     /* left: 90px; */
     top: 20px;
 }
@@ -415,7 +418,7 @@ position:relative;
 }
 
 #octopus{
-    top: 230px;
+        top: 290px;
     left: 480px;
 	transform: rotate(90deg);
 }
@@ -428,7 +431,7 @@ position:relative;
 #coral{
 	position: relative;
     left: -200px;
-    top: 400px;
+    top: 410px;
     opacity: 0;
 }
 @keyframes turt-movement {
@@ -453,15 +456,27 @@ a {
 	width: 1000px;
 }
 a#read-more{
-
-   
     text-decoration: none;
-    color: white;}
+    color: #bf4440;
+    padding: 0px;
+}
 #btn {
-	width: 100px;
-	    position: absolute;
-    top: 120px;
-    left: 250px;
+	  color: white;
+    font-weight: bold;
+	font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 14px;
+	z-index: 10;
+    font-family: monospace;
+    width: 80px;
+    height: 43px;
+    position: absolute;
+    top: 110px;
+    left: 60px;
+    border: none;
+    background: none;
+    background-image: url(/assets/speech3.png);
+    background-size: 80px;
+    background-repeat: no-repeat;
 }
 div.whale-human {
 	display: flex;
@@ -542,7 +557,7 @@ canvas {
 	animation-duration: 20s;
 	opacity: 0.7;
 	position: absolute;
-	left: 570px;
+	left: 50vw;
 	top: 350px;
 	animation: animate 10s linear 1;
 	bottom: -150px;
@@ -581,7 +596,72 @@ canvas {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width:100px;
 }
 h1 {
 	margin: 0px auto;
 }
+#grass{
+top: 450px;
+    position: absolute;
+    right: 300px;
+    width: 100vw;
+	opacity:0;
+}
+#dirt{
+opacity:0;
+width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 300px;}
+.help-1{
+
+	  position:absolute;
+      opacity:0;
+	  font-size: 90px;
+      color:rgb(239,128,106);
+      top: 100px;
+	  
+left: 90px;
+    padding: 15px;
+	}
+	.help-2{
+left: 90px;
+    padding: 15px;
+	  position:absolute;
+      opacity:0;
+	  font-size: 80px;
+      color:white;
+      top: 100px;}
+	  .help-3{
+left: 90px;
+    padding: 15px;
+	  position:absolute;
+      opacity:0;
+	  font-size: 80px;
+      color:white;
+      top: 100px;}
+	  .help-4{
+left: 90px;
+    padding: 15px;
+	  position:absolute;
+      opacity:0;
+	  font-size: 80px;
+      color:white;
+      top: 100px;}
+	   .help-5{
+left: 90px;
+    padding: 15px;
+	  position:absolute;
+      opacity:0;
+	  font-size: 80px;
+      color:white;
+      top: 100px;}
+
+	  #ocean-story{
+	  position: absolute;
+    left: 400px;
+   
+    bottom: 450px;
+
+	  }
