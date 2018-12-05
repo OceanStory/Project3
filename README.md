@@ -26,6 +26,7 @@ The idea of this project is to build an interactive story to increase awareness 
 - CSS
 - Javascript
 - Jquery
+- AJAX
 
 ## Additional Libraries :
 
