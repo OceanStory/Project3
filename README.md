@@ -7,7 +7,7 @@
 - Atheer [https://github.com/atheer10]
 - Halima [https://github.com/Halima95]
 - Sara Alhamed (Designer).
-- Leena [https://github.com/leanaAlq]
+- Leana [https://github.com/leanaAlq]
 - Noura Alhadlaq.[https://github.com/NouraAlhadlaq]
 
 ## Description :
