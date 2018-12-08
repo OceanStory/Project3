@@ -43,7 +43,7 @@ The idea of this project is to build an interactive story to increase awareness 
 
 ## Approach :
 
-First of all was deciding what we actually wanted to build , and dividing the work between team members using [Trello](https://trello.com). Getting used with [Github](https://github.com). 
+First of all was deciding what we actually wanted to build , and dividing the work between team members using [Trello](https://trello.com). Getting used to [Github](https://github.com). 
 
 ## Challenges:
 
