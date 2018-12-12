@@ -1,7 +1,7 @@
 # Ocean Story 
 
 
-### [ Heroku Link](https://oceanstory.herokuapp.com/)
+### [ Heroku Link](https://secret-beyond-29760.herokuapp.com/)
 
 ## Team Members:
 - Atheer [https://github.com/atheer10]
